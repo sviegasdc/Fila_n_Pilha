@@ -10,9 +10,9 @@ public interface IFila_n_Pilha {
     public Object popPilha2() throws emptyQueueException;
 
     // tamanho das pilhas
-    public int topPilha1();
+    public void topPilha1();
 
-    public int topPilha2();
+    public void topPilha2();
 
 
 }

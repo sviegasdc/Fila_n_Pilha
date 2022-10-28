@@ -1,4 +1,6 @@
 public class Fila_n_Pilha implements IFila_n_Pilha {
+    // junção dos métodos da pilha com a fila
+    // FIFO, duplicação de tamanho de array, sem método circular porque não faz sentido para mim e não estava escrito no enunciado
 
     // criando os topos das pilhas
     public int topo1;
@@ -31,11 +33,11 @@ public class Fila_n_Pilha implements IFila_n_Pilha {
     }
     public void pushPilha2(Object elemento) {
         if (topo2 - 1 == topo1) {
-            System.out.println("Pilha 1 chegou ao topo, hora de duplicar");
+            System.out.println("Pilha 2 chegou ao topo, hora de duplicar");
             duplicaArray();
         }
-        topo2--; // indo para próxima posição para depois inserir
-        this.FilaP[topo2] = elemento; // topo da pilha 2 é o final do array
+            topo2--; // indo para próxima posição para depois inserir
+            this.FilaP[topo2] = elemento; // topo da pilha 2 é o final do array
     }
     public Object popPilha1() throws emptyQueueException {
         // já que o 'pop' ficou com o start é necessário checar se o começo n é igual ao final da outra pilha
@@ -61,12 +63,12 @@ public class Fila_n_Pilha implements IFila_n_Pilha {
         return FilaP;
     }
 
-    public int topPilha1() {
-        return topo1 + 1;
+    public void topPilha1() {
+        System.out.println(this.topo1 + 1);
     }
 
-    public int topPilha2() {
-        return topo2 - 1;
+    public void topPilha2() {
+        System.out.println(this.topo2 + 1);
     }
 
     // duplicando o array quando as pilhas estiverem cheias
@@ -83,8 +85,9 @@ public class Fila_n_Pilha implements IFila_n_Pilha {
         for(int i=this.FilaP.length - 1; i>=this.topo2; i--){
             novoArray[novoSize--] = this.FilaP[i];
         }
-        this.FilaP = novoArray;
-        this.topo2 = this.FilaP.length;
+        this.FilaP = novoArray; // FilaP agora com o novo tamanho
+        this.topo2 = novoSize + 1; // topo 2 começando no fina do array (resetando o topo 2)
+        // não sei exatamente o porquê do "+ 1" porem sem isso ele fica dando uns null aleatório no meio da pilha 2
     }
 
     // escrever o array com os elementos das pilhas

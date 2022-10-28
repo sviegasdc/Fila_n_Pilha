@@ -13,6 +13,12 @@ public class TestFila_n_Pilha {
         FilaP.pushPilha2("pilha2-2");
         FilaP.pushPilha2("pilha2-3");
         FilaP.pushPilha2("pilha2-4");
+//        FilaP.pushPilha2("pilha2-5");
+//        FilaP.pushPilha2("pilha2-6");
+//        FilaP.pushPilha2("pilha2-7");
+//        FilaP.pushPilha2("pilha2-8");
+//        FilaP.pushPilha2("pilha2-9");
+//        FilaP.pushPilha2("pilha2-10");
 
         System.out.println(FilaP);
 
@@ -37,9 +43,8 @@ public class TestFila_n_Pilha {
 //        System.out.println(FilaP);
 
         // tamanho dos topos
-//        FilaP.topPilha1();
-//        FilaP.topPilha2();
-
+        FilaP.topPilha1();
+        FilaP.topPilha2();
 
     }
 }
